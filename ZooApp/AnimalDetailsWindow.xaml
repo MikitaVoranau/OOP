@@ -1,0 +1,21 @@
+﻿<Window x:Class="ZooApp.AnimalDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Информация о животном" Height="400" Width="400"
+        Background="#EDF2F7">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Image x:Name="AnimalImage" Height="150" Margin="0,0,0,10" Stretch="Uniform" />
+
+        <StackPanel x:Name="InfoPanel" Grid.Row="1" Margin="0,10,0,10" />
+
+        <Button Content="Сохранить изменения" Grid.Row="3" HorizontalAlignment="Right" Width="150" Height="35" Margin="0,10,0,0"
+                Click="SaveButton_Click" Background="#4CAF50" Foreground="White" BorderBrush="Transparent" />
+    </Grid>
+</Window>

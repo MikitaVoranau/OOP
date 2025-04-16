@@ -1,0 +1,97 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0-windows7.0": {
+      "Lab1_OOP/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Lab1_OOP.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lab1_OOP.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Lab1_OOP/1.0.0": {
+      "type": "project",
+      "path": "../../Lab1_OOP/Lab1_OOP/Lab1_OOP.csproj",
+      "msbuildProject": "../../Lab1_OOP/Lab1_OOP/Lab1_OOP.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0-windows7.0": [
+      "Lab1_OOP >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\minat\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\minat\\RiderProjects\\ZooApp\\ZooApp\\ZooApp.csproj",
+      "projectName": "ZooApp",
+      "projectPath": "C:\\Users\\minat\\RiderProjects\\ZooApp\\ZooApp\\ZooApp.csproj",
+      "packagesPath": "C:\\Users\\minat\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\minat\\RiderProjects\\ZooApp\\ZooApp\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\minat\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0-windows"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "projectReferences": {
+            "C:\\Users\\minat\\RiderProjects\\Lab1_OOP\\Lab1_OOP\\Lab1_OOP.csproj": {
+              "projectPath": "C:\\Users\\minat\\RiderProjects\\Lab1_OOP\\Lab1_OOP\\Lab1_OOP.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0-windows7.0": {
+        "targetAlias": "net8.0-windows",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
