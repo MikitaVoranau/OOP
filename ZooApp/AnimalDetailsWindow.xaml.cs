@@ -13,21 +13,28 @@ namespace ZooApp
         private readonly Dictionary<PropertyInfo, TextBox> editors = new();
         private readonly Dictionary<Type, string> imageMap;
 
-        public AnimalDetailsWindow(livingOrgs animal, Dictionary<Type, string> imageMap)
+        public AnimalDetailsWindow(livingOrgs animal)
         {
             InitializeComponent();
             this.animal = animal;
-            this.imageMap = imageMap;
+            
 
             LoadImage();
             DisplayInfo();
         }
-
+        
         private void LoadImage()
         {
-            if (imageMap.TryGetValue(animal.GetType(), out string path))
+            string name = animal.Name?.ToLower() ?? "";
+            string imagePath = $"Images/{name}.png";
+
+            if (System.IO.File.Exists(imagePath))
             {
-                AnimalImage.Source = new BitmapImage(new Uri(path, UriKind.Relative));
+                AnimalImage.Source = new BitmapImage(new Uri(System.IO.Path.GetFullPath(imagePath)));
+            }
+            else
+            {
+                AnimalImage.Source = null;
             }
         }
 

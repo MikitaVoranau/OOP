@@ -148,7 +148,7 @@ namespace ZooApp
         {
             if (AnimalListBox.SelectedItem is livingOrgs animal)
             {
-                var infoWindow = new AnimalDetailsWindow(animal, imageMap);
+                var infoWindow = new AnimalDetailsWindow(animal);
                 infoWindow.Owner = this;
                 infoWindow.ShowDialog();
             }

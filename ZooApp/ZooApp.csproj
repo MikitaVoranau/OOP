@@ -19,6 +19,14 @@
     <ItemGroup>
       <None Remove="Images\carnivore.png" />
       <Resource Include="Images\carnivore.png" />
+      <None Remove="Images\wolf.png" />
+      <Content Include="Images\wolf.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Images\lion.png" />
+      <Content Include="Images\lion.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
 </Project>

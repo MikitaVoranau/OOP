@@ -26,3 +26,6 @@ C:\Users\minat\RiderProjects\ZooApp\ZooApp\obj\Debug\net8.0-windows\ZooApp.genru
 C:\Users\minat\RiderProjects\ZooApp\ZooApp\obj\Debug\net8.0-windows\ref\ZooApp.dll
 C:\Users\minat\RiderProjects\ZooApp\ZooApp\obj\Debug\net8.0-windows\AnimalDetailsWindow.baml
 C:\Users\minat\RiderProjects\ZooApp\ZooApp\obj\Debug\net8.0-windows\AnimalDetailsWindow.g.cs
+C:\Users\minat\RiderProjects\ZooApp\ZooApp\obj\Debug\net8.0-windows\ZooApp.sourcelink.json
+C:\Users\minat\RiderProjects\ZooApp\ZooApp\bin\Debug\net8.0-windows\Images\wolf.png
+C:\Users\minat\RiderProjects\ZooApp\ZooApp\obj\Debug\net8.0-windows\ZooApp_Content.g.cs
