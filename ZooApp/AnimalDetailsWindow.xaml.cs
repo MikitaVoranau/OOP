@@ -26,11 +26,12 @@ namespace ZooApp
         private void LoadImage()
         {
             string name = animal.Name?.ToLower() ?? "";
-            string imagePath = $"Images/{name}.png";
+            string path = $"Images/{name}.png"; 
+            string fullPath = System.IO.Path.GetFullPath(path);
 
-            if (System.IO.File.Exists(imagePath))
+            if (System.IO.File.Exists(fullPath))
             {
-                AnimalImage.Source = new BitmapImage(new Uri(System.IO.Path.GetFullPath(imagePath)));
+                AnimalImage.Source = new BitmapImage(new Uri(fullPath));
             }
             else
             {

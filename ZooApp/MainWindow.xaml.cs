@@ -19,7 +19,7 @@ namespace ZooApp
         {
             InitializeComponent();
             LoadAnimalTypes();
-            SetupImageMap();
+            
         }
 
         private void LoadAnimalTypes()
@@ -31,18 +31,7 @@ namespace ZooApp
 
             TypeComboBox.ItemsSource = types;
         }
-
-        private void SetupImageMap()
-        {
-            imageMap[typeof(Carnivore)] = "Images/carnivore.png";
-            imageMap[typeof(BirdOfPrey)] = "Images/hawk.png";
-            imageMap[typeof(FruitTree)] = "Images/tree.png";
-            imageMap[typeof(Human)] = "Images/human.png";
-            imageMap[typeof(Cetacean)] = "Images/whale.png";
-            imageMap[typeof(Primate)] = "Images/primate.png";
-            imageMap[typeof(Grass)] = "Images/grass.png";
-        }
-
+        
         private void TypeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             DynamicFieldsPanel.Children.Clear();
@@ -108,8 +97,7 @@ namespace ZooApp
                 var animal = (livingOrgs)currentConstructor.Invoke(args);
                 animals.Add(animal);
                 AnimalListBox.Items.Add(animal);
-
-                // Очистка формы после создания
+                
                 TypeComboBox.SelectedIndex = -1;
                 DynamicFieldsPanel.Children.Clear();
                 fieldInputs.Clear();
@@ -167,8 +155,15 @@ namespace ZooApp
                 ["color"] = "Цвет",
                 ["height"] = "Рост",
                 ["isEndangered"] = "Находится под угрозой",
-                ["hasFur"] = "Имеет шерсть"
-                // Добавь сюда другие параметры по мере необходимости
+                ["hasFur"] = "Имеет шерсть",
+                ["wingspan"] = "Размах крыльев",
+                ["prey"] = "Добыча",
+                ["length"] = "Длина",
+                ["occupation"] = "Работа",
+                ["hadJob"] = "Есть ли работа?",
+                ["canUseTools"] = "Может ли использовать предметы?",
+                ["fruitType"] = "Тип фрукта",
+                ["isMowed"] = "Двигается ли?"
             };
 
             return dict.TryGetValue(name, out var translated) ? translated : name;

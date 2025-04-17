@@ -17,6 +17,12 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Content Include="Images\**\*.*">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+    
+    <ItemGroup>
       <None Remove="Images\carnivore.png" />
       <Resource Include="Images\carnivore.png" />
       <None Remove="Images\wolf.png" />
@@ -27,6 +33,10 @@
       <Content Include="Images\lion.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
+      <None Update="Images\eagle.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Remove="Images\human.jpg" />
     </ItemGroup>
 
 </Project>
