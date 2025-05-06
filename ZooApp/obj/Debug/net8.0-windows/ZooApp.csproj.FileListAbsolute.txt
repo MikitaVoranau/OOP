@@ -33,3 +33,4 @@ C:\Users\minat\RiderProjects\ZooApp\ZooApp\bin\Debug\net8.0-windows\Images\lion.
 C:\Users\minat\RiderProjects\ZooApp\ZooApp\bin\Debug\net8.0-windows\Images\eagle.png
 C:\Users\minat\RiderProjects\ZooApp\ZooApp\bin\Debug\net8.0-windows\Images\carnivore.png
 C:\Users\minat\RiderProjects\ZooApp\ZooApp\bin\Debug\net8.0-windows\Images\human.png
+C:\Users\minat\RiderProjects\ZooApp\ZooApp\bin\Debug\net8.0-windows\Images\palm-tree.png

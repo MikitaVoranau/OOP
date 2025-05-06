@@ -9,9 +9,9 @@ namespace ZooApp
 {
     public partial class AnimalDetailsWindow : Window
     {
-        private readonly livingOrgs animal;
-        private readonly Dictionary<PropertyInfo, TextBox> editors = new();
-        private readonly Dictionary<Type, string> imageMap;
+        private livingOrgs animal;
+        private Dictionary<PropertyInfo, TextBox> editors = new();
+        private Dictionary<Type, string> imageMap;
 
         public AnimalDetailsWindow(livingOrgs animal)
         {

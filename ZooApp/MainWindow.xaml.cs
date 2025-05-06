@@ -10,9 +10,8 @@ namespace ZooApp
 {
     public partial class MainWindow : Window
     {
-        private readonly List<livingOrgs> animals = new();
-        private readonly Dictionary<Type, string> imageMap = new();
-        private readonly Dictionary<string, FrameworkElement> fieldInputs = new();
+        private List<livingOrgs> animals = new();
+        private Dictionary<string, FrameworkElement> fieldInputs = new();
         private ConstructorInfo? currentConstructor;
 
         public MainWindow()
@@ -36,7 +35,6 @@ namespace ZooApp
         {
             DynamicFieldsPanel.Children.Clear();
             fieldInputs.Clear();
-
             var type = (Type)TypeComboBox.SelectedItem;
             if (type == null) return;
 
@@ -108,14 +106,7 @@ namespace ZooApp
                 MessageBox.Show("Ошибка при создании: " + ex.Message);
             }
         }
-
-        private void ClearForm()
-        {
-            TypeComboBox.SelectedItem = null;
-            DynamicFieldsPanel.Children.Clear();
-            fieldInputs.Clear();
-        }
-
+        
         private void DeleteAnimal_Click(object sender, RoutedEventArgs e)
         {
             if (AnimalListBox.SelectedItem is livingOrgs animal)

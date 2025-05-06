@@ -11,6 +11,7 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/eagle.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/human.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/lion.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/palm-tree.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/wolf.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/wolf.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/lion.png")]
