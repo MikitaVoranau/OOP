@@ -1,0 +1,38 @@
+[
+  {
+    "TypeName": "Carnivore",
+    "Properties": {
+      "Prey": "\u0432\u0439\u0446\u0432\u0439\u0446\u0432",
+      "HasFur": true,
+      "Name": "\u0439\u0446\u0432\u0439\u0446\u0432\u0439",
+      "Age": 12
+    }
+  },
+  {
+    "TypeName": "Mammal",
+    "Properties": {
+      "HasFur": true,
+      "Name": "\u0439\u0446\u0432\u0439\u0446\u0432",
+      "Age": 12
+    }
+  },
+  {
+    "TypeName": "Primate",
+    "Properties": {
+      "CanUseTools": true,
+      "HasFur": true,
+      "Name": "\u0439\u0446\u0432\u0439\u0446\u0432",
+      "Age": 12
+    }
+  },
+  {
+    "TypeName": "Human",
+    "Properties": {
+      "Occupation": "12",
+      "HasJob": true,
+      "HasFur": true,
+      "Name": "human",
+      "Age": 12
+    }
+  }
+]

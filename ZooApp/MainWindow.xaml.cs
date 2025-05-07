@@ -1,36 +1,54 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using Lab1_OOP;
+using System.Text.Json;
+using System.IO;
 
 namespace ZooApp
 {
     public partial class MainWindow : Window
     {
-        private List<livingOrgs> animals = new();
+        // Используем ObservableCollection для автоматического обновления GUI
+        private ObservableCollection<livingOrgs> animals = new();
         private Dictionary<string, FrameworkElement> fieldInputs = new();
         private ConstructorInfo? currentConstructor;
-
+    
         public MainWindow()
         {
             InitializeComponent();
+            AnimalListBox.ItemsSource = animals;
             LoadAnimalTypes();
-            
         }
+
+        private static readonly Dictionary<string, Type> TypeMap = new(StringComparer.OrdinalIgnoreCase);
 
         private void LoadAnimalTypes()
         {
-            var types = Assembly.Load("Lab1_OOP")
-                .GetTypes()
-                .Where(t => typeof(livingOrgs).IsAssignableFrom(t) && !t.IsAbstract)
-                .ToList();
+            try
+            {
+                var types = Assembly.Load("Lab1_OOP")
+                    .GetTypes()
+                    .Where(t => typeof(livingOrgs).IsAssignableFrom(t) && !t.IsAbstract)
+                    .ToList();
 
-            TypeComboBox.ItemsSource = types;
+                foreach (var type in types)
+                {
+                    TypeMap[type.Name] = type;
+                }
+
+                TypeComboBox.ItemsSource = types;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка загрузки типов: {ex.Message}");
+            }
         }
-        
+
         private void TypeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             DynamicFieldsPanel.Children.Clear();
@@ -70,6 +88,57 @@ namespace ZooApp
             }
         }
 
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new Microsoft.Win32.SaveFileDialog
+            {
+                Filter = "JSON Files|*.json",
+                DefaultExt = ".json",
+                FileName = "animals"
+            };
+
+            if (dialog.ShowDialog() == true)
+            {
+                try
+                {
+                    // Преобразуем ObservableCollection -> List
+                    AnimalSerializer.SaveAnimals(animals.ToList(), dialog.FileName);
+                    MessageBox.Show("Данные сохранены!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка: {ex.Message}");
+                }
+            }
+        }
+
+        private void Load_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new Microsoft.Win32.OpenFileDialog
+            {
+                Filter = "JSON Files|*.json",
+                Multiselect = false
+            };
+
+            if (dialog.ShowDialog() == true)
+            {
+                try
+                {
+                    // Преобразуем List -> ObservableCollection
+                    animals = new ObservableCollection<livingOrgs>(
+                        AnimalSerializer.LoadAnimals(dialog.FileName)
+                    );
+
+                    AnimalListBox.ItemsSource = animals; // Обновляем привязку
+                    MessageBox.Show("Данные успешно загружены!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при загрузке: {ex.Message}");
+                }
+            }
+        }
+
         private void CreateAnimal_Click(object sender, RoutedEventArgs e)
         {
             if (currentConstructor == null) return;
@@ -93,34 +162,25 @@ namespace ZooApp
                 }
 
                 var animal = (livingOrgs)currentConstructor.Invoke(args);
-                animals.Add(animal);
-                AnimalListBox.Items.Add(animal);
-                
-                TypeComboBox.SelectedIndex = -1;
-                DynamicFieldsPanel.Children.Clear();
-                fieldInputs.Clear();
-                currentConstructor = null;
+                animals.Add(animal); // Добавляем в коллекцию
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ошибка при создании: " + ex.Message);
             }
         }
-        
+
         private void DeleteAnimal_Click(object sender, RoutedEventArgs e)
         {
-            if (AnimalListBox.SelectedItem is livingOrgs animal)
+            if (AnimalListBox.SelectedItem is livingOrgs selectedAnimal)
             {
-                animals.Remove(animal);
-                AnimalListBox.Items.Remove(animal);
+                animals.Remove(selectedAnimal); // Удаляем через коллекцию
             }
         }
 
         private void ShowAll_Click(object sender, RoutedEventArgs e)
         {
-            AnimalListBox.Items.Clear();
-            foreach (var animal in animals)
-                AnimalListBox.Items.Add(animal);
+            // Ничего не делаем — данные уже отображаются через ItemsSource
         }
 
         private void AnimalListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

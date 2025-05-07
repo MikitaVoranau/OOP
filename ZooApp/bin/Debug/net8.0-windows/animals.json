@@ -1,0 +1,11 @@
+[
+  {
+    "TypeName": "Carnivore",
+    "Properties": {
+      "Prey": "\u0446\u0439\u0432\u0439\u0446\u0432\u0439\u0446",
+      "HasFur": true,
+      "Name": "\u0446\u0439\u0432\u0439\u0446\u0432",
+      "Age": 12
+    }
+  }
+]
