@@ -170,17 +170,66 @@ namespace ZooApp
             }
         }
 
+        private void SaveTxt_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new Microsoft.Win32.SaveFileDialog
+            {
+                Filter = "Text Files|*.txt",
+                DefaultExt = ".txt",
+                FileName = "animals"
+            };
+
+            if (dialog.ShowDialog() == true)
+            {
+                try
+                {
+                    TextFileSerializer.SaveToText(animals.ToList(), dialog.FileName);
+                    MessageBox.Show("Данные сохранены в TXT!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка сохранения: {ex.Message}");
+                }
+            }
+        }
+
+        private void LoadTxt_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new Microsoft.Win32.OpenFileDialog
+            {
+                Filter = "Text Files|*.txt",
+                Multiselect = false
+            };
+
+            if (dialog.ShowDialog() == true)
+            {
+                try
+                {
+                    animals = new ObservableCollection<livingOrgs>(
+                        TextFileSerializer.LoadFromText(dialog.FileName)
+                    );
+                    AnimalListBox.ItemsSource = animals;
+                    MessageBox.Show("Данные загружены из TXT!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка загрузки: {ex.Message}");
+                }
+            }
+        }
+        
+        private void ShowAll_Click(object sender, RoutedEventArgs e)
+        {
+            AnimalListBox.ItemsSource = null;
+            AnimalListBox.ItemsSource = animals;
+        }
+
         private void DeleteAnimal_Click(object sender, RoutedEventArgs e)
         {
             if (AnimalListBox.SelectedItem is livingOrgs selectedAnimal)
             {
-                animals.Remove(selectedAnimal); // Удаляем через коллекцию
+                animals.Remove(selectedAnimal);
             }
-        }
-
-        private void ShowAll_Click(object sender, RoutedEventArgs e)
-        {
-            // Ничего не делаем — данные уже отображаются через ItemsSource
         }
 
         private void AnimalListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

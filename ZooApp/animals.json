@@ -1,18 +1,38 @@
 [
   {
+    "TypeName": "BirdOfPrey",
+    "Properties": {
+      "Prey": "dwq",
+      "Wingspan": 1,
+      "Name": "BirdOfPrey",
+      "Age": 1
+    }
+  },
+  {
     "TypeName": "Carnivore",
     "Properties": {
-      "Prey": "\u0432\u0439\u0446\u0432\u0439\u0446\u0432",
+      "Prey": "dqwqdw",
       "HasFur": true,
-      "Name": "\u0439\u0446\u0432\u0439\u0446\u0432\u0439",
+      "Name": "carnivore",
       "Age": 12
     }
   },
   {
-    "TypeName": "Mammal",
+    "TypeName": "Cetacean",
     "Properties": {
+      "Length": 0,
       "HasFur": true,
-      "Name": "\u0439\u0446\u0432\u0439\u0446\u0432",
+      "Name": "cetacean",
+      "Age": 12
+    }
+  },
+  {
+    "TypeName": "Human",
+    "Properties": {
+      "Occupation": "qdwqwd",
+      "HasJob": true,
+      "HasFur": true,
+      "Name": "human",
       "Age": 12
     }
   },
@@ -21,17 +41,51 @@
     "Properties": {
       "CanUseTools": true,
       "HasFur": true,
-      "Name": "\u0439\u0446\u0432\u0439\u0446\u0432",
+      "Name": "primate",
       "Age": 12
     }
   },
   {
-    "TypeName": "Human",
+    "TypeName": "Grass",
     "Properties": {
-      "Occupation": "12",
-      "HasJob": true,
+      "IsMowed": false,
+      "Color": "qwdqw",
+      "Name": "grass",
+      "Age": 12
+    }
+  },
+  {
+    "TypeName": "Tree",
+    "Properties": {
+      "Height": 1221,
+      "Color": "1dqw",
+      "Name": "tree",
+      "Age": 12
+    }
+  },
+  {
+    "TypeName": "FruitTree",
+    "Properties": {
+      "FruitType": "qwdqwd",
+      "Height": 122,
+      "Color": "dqwdqw",
+      "Name": "fruitree",
+      "Age": 12
+    }
+  },
+  {
+    "TypeName": "Bird",
+    "Properties": {
+      "Wingspan": 12,
+      "Name": "bird",
+      "Age": 12
+    }
+  },
+  {
+    "TypeName": "Mammal",
+    "Properties": {
       "HasFur": true,
-      "Name": "human",
+      "Name": "mammal",
       "Age": 12
     }
   }

@@ -1,0 +1,65 @@
+TypeName: BirdOfPrey
+Prey: dwq
+Wingspan: 1
+Name: BirdOfPrey
+Age: 1
+
+TypeName: Carnivore
+Prey: dqwqdw
+HasFur: True
+Name: carnivore
+Age: 12
+
+TypeName: Cetacean
+Length: 0
+HasFur: True
+Name: cetacean
+Age: 12
+
+TypeName: Human
+Occupation: qdwqwd
+HasJob: True
+HasFur: True
+Name: human
+Age: 12
+
+TypeName: Primate
+CanUseTools: True
+HasFur: True
+Name: primate
+Age: 12
+
+TypeName: Grass
+IsMowed: False
+Color: qwdqw
+Name: grass
+Age: 12
+
+TypeName: Tree
+Height: 1221
+Color: 1dqw
+Name: tree
+Age: 12
+
+TypeName: FruitTree
+FruitType: qwdqwd
+Height: 122
+Color: dqwdqw
+Name: fruitree
+Age: 12
+
+TypeName: Bird
+Wingspan: 12
+Name: bird
+Age: 12
+
+TypeName: Mammal
+HasFur: True
+Name: mammal
+Age: 12
+
+TypeName: Mammal
+HasFur: True
+Name: mammal
+Age: 12
+
